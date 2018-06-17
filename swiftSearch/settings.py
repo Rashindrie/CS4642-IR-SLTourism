@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for CS4642_IR_SLTourism project
+# Scrapy settings for swiftSearch project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,14 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'CS4642_IR_SLTourism'
+BOT_NAME = 'swiftSearch'
 
-SPIDER_MODULES = ['CS4642_IR_SLTourism.spiders']
-NEWSPIDER_MODULE = 'CS4642_IR_SLTourism.spiders'
+SPIDER_MODULES = ['swiftSearch.spiders']
+NEWSPIDER_MODULE = 'swiftSearch.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'CS4642_IR_SLTourism (+http://www.yourdomain.com)'
+#USER_AGENT = 'swiftSearch (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -47,13 +47,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'CS4642_IR_SLTourism.middlewares.Cs4642IrSltourismSpiderMiddleware': 543,
+#    'swiftSearch.middlewares.Cs4642IrSltourismSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'CS4642_IR_SLTourism.middlewares.Cs4642IrSltourismDownloaderMiddleware': 543,
+#    'swiftSearch.middlewares.Cs4642IrSltourismDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -65,7 +65,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'CS4642_IR_SLTourism.pipelines.Cs4642IrSltourismPipeline': 300,
+#    'swiftSearch.pipelines.Cs4642IrSltourismPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
