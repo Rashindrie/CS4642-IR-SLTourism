@@ -8,7 +8,7 @@ class YamuSpider(scrapy.Spider):
 
     # The URLs to start with
     start_urls = [
-        'https://www.yamu.lk/place/shops?page=1'
+        'https://www.yamu.lk/place/shops/page=1'
     ]
 
     allowed_domains = ["yamu.lk"]
@@ -19,7 +19,7 @@ class YamuSpider(scrapy.Spider):
             print href
             yield scrapy.Request(href, self.parse_shop)
 
-        for i in range(2, 15):
+        for i in range(1, 15):
             yield scrapy.Request('https://www.yamu.lk/place/shops?page=%s' % str(i))
 
     def parse_shop(self, response):
