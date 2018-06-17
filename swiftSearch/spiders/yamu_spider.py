@@ -32,14 +32,13 @@ class YamuSpider(scrapy.Spider):
         restaurant.add_xpath(field_name='cuisine', xpath='//a[contains(@href,"/cuisine/")]/text()')
         restaurant.add_xpath(field_name='price_range', xpath='//a[contains(text(),"Rs.")]/text()')
         restaurant.add_xpath(field_name='dish_types', xpath='//a[contains(@href,"/dishtype/")]/text()')
-        restaurant.add_value('overall_rating',
-                             response.xpath('//a[contains(@href,"/rating/rating")]/@href')[0].extract().split('-')[-1])
-        restaurant.add_value('quality_rating',
-                             response.xpath('//a[contains(@href,"/rating/quality")]/@href')[0].extract().split('-')[-1])
-        restaurant.add_value('service_rating',
-                             response.xpath('//a[contains(@href,"/rating/service")]/@href')[0].extract().split('-')[-1])
-        restaurant.add_value('ambiance_rating',
-                             response.xpath('//a[contains(@href,"/rating/ambiance")]/@href')[0].extract().split('-')[
-                                 -1])
+        restaurant.add_value(field_name='overall_rating',
+                             value=response.xpath('//a[contains(@href,"/rating/rating")]/@href').extract_first().split('-')[-1] if response.xpath('//a[contains(@href,"/rating/rating")]/@href').extract_first() is not None else 'N/A')
+        restaurant.add_value(field_name='quality_rating',
+                             value=response.xpath('//a[contains(@href,"/rating/quality")]/@href').extract_first().split('-')[-1] if response.xpath('//a[contains(@href,"/rating/quality")]/@href').extract_first() is not None else 'N/A')
+        restaurant.add_value(field_name='service_rating',
+                             value=response.xpath('//a[contains(@href,"/rating/service")]/@href').extract_first().split('-')[-1] if response.xpath('//a[contains(@href,"/rating/service")]/@href').extract_first() is not None else 'N/A')
+        restaurant.add_value(field_name='ambiance_rating',
+                             value=response.xpath('//a[contains(@href,"/rating/ambiance")]/@href').extract_first().split('-')[-1] if response.xpath('//a[contains(@href,"/rating/ambiance")]/@href').extract_first() is not None else 'N/A')
 
         yield restaurant.load_item()
