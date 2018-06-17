@@ -10,12 +10,14 @@ import scrapy
 
 class YamuItem(scrapy.Item):
     name = scrapy.Field()
+    category = scrapy.Field()
     address = scrapy.Field()
     contact = scrapy.Field()
     description = scrapy.Field()
     cuisine = scrapy.Field()
     price_range = scrapy.Field()
     dish_types = scrapy.Field()
+    facilities = scrapy.Field()
     overall_rating = scrapy.Field()
     quality_rating = scrapy.Field()
     service_rating = scrapy.Field()
