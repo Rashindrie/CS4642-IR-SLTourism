@@ -9,6 +9,7 @@ import scrapy
 
 
 class YamuItem(scrapy.Item):
+    url = scrapy.Field()
     name = scrapy.Field()
     category = scrapy.Field()
     address = scrapy.Field()
@@ -22,3 +23,5 @@ class YamuItem(scrapy.Item):
     quality_rating = scrapy.Field()
     service_rating = scrapy.Field()
     ambiance_rating = scrapy.Field()
+    opening_hours = scrapy.Field()
+    same_as = scrapy.Field()

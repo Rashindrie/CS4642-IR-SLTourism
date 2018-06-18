@@ -1,7 +1,7 @@
 import scrapy
 from scrapy.loader import ItemLoader
 from swiftSearch.items import YamuItem
-
+import json
 
 class YamuSpider(scrapy.Spider):
     name = "yamu_all"
@@ -48,8 +48,11 @@ class YamuSpider(scrapy.Spider):
         item.add_value(field_name='ambiance_rating',
                              value=response.xpath('//a[contains(@href,"/rating/ambiance")]/@href').extract_first().split('-')[-1] if response.xpath('//a[contains(@href,"/rating/ambiance")]/@href').extract_first() is not None else 'N/A')
         item.add_xpath(field_name='address', xpath='//p[@class="addressLine"]/text()')
-        item.add_value(field_name='contact',
-                             value=(" ".join((response.xpath('//a[@class="emph"]/text()').extract_first()).split())).split(' ', 1)[1] if response.xpath('//a[@class="emph"]/text()').extract_first() is not None else 'N/A')
+        item.add_value(field_name='contact', value=json.loads(response.xpath('//script[contains(text(),"servesCuisine")]/text()').extract_first())['telephone'] if 'telephone' in json.loads(response.xpath('//script[contains(text(),"servesCuisine")]/text()').extract_first()) else 'N/A')
         item.add_value(field_name='facilities', value=get_facilities())
+        item.add_value(field_name='category', value=json.loads(response.xpath('//script[contains(text(),"itemListElement")]/text()').extract_first())['itemListElement'][0]['item']['name'].rsplit(' ', 1)[0])
+        item.add_value(field_name='url', value=response.request.url)
+        item.add_value(field_name='opening_hours', value=json.loads(response.xpath('//script[contains(text(),"servesCuisine")]/text()').extract_first())['openingHours'])
+        item.add_value(field_name='same_as', value=json.loads(response.xpath('//script[contains(text(),"servesCuisine")]/text()').extract_first())['sameAs'])
 
         yield item.load_item()
