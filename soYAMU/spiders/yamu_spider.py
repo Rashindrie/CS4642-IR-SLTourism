@@ -1,10 +1,10 @@
 import scrapy
 from scrapy.loader import ItemLoader
-from swiftSearch.items import YamuItem
+from soYAMU.items import YamuItem
 import json
 
 class YamuSpider(scrapy.Spider):
-    name = "yamu_all"
+    name = "yamu_spider"
 
     # The URLs to start with
     start_urls = [

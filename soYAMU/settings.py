@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for swiftSearch project
+# Scrapy settings for soYAMU project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,14 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'swiftSearch'
+BOT_NAME = 'soYAMU'
 
-SPIDER_MODULES = ['swiftSearch.spiders']
-NEWSPIDER_MODULE = 'swiftSearch.spiders'
+SPIDER_MODULES = ['soYAMU.spiders']
+NEWSPIDER_MODULE = 'soYAMU.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'swiftSearch (+http://www.yourdomain.com)'
+#USER_AGENT = 'soYAMU (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -47,13 +47,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'swiftSearch.middlewares.Cs4642IrSltourismSpiderMiddleware': 543,
+#    'soYAMU.middlewares.Cs4642IrSltourismSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'swiftSearch.middlewares.Cs4642IrSltourismDownloaderMiddleware': 543,
+#    'soYAMU.middlewares.Cs4642IrSltourismDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -65,7 +65,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'swiftSearch.pipelines.Cs4642IrSltourismPipeline': 300,
+#    'soYAMU.pipelines.Cs4642IrSltourismPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
